@@ -1,5 +1,6 @@
 /target
 examples/*/target
-*.swp
+.*.sw?
+*~
 Cargo.lock
 examples/*/Cargo.lock

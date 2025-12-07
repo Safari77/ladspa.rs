@@ -1,19 +1,25 @@
 [package]
 
 name = "ladspa"
-version = "0.3.4"
-authors = ["Noah Weninger <nweninge@ualberta.ca>"]
+version = "0.4.0"
 description = "An interface for writing LADSPA plugins safely in Rust."
 documentation = "http://nwoeanhinnogaehr.github.io/ladspa.rs/ladspa"
-repository = "https://github.com/nwoeanhinnogaehr/ladspa.rs"
+repository = "https://github.com/Safari77/ladspa.rs"
 license = "Unlicense"
 keywords = ["audio", "ladspa", "dsp"]
+edition = "2024"
 
 [dependencies]
-bitflags = "0.8.2"
-vec_map = "0.7.0"
-libc = "0.2.21"
+bitflags = "2"
+vec_map = "0.8"
+libc = "0.2"
 
 [lib]
 name = "ladspa"
 crate-type = ["rlib"]
+
+[profile.release]
+debug = true
+opt-level = 3
+lto = "fat"
+panic = "abort"
